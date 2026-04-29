@@ -18,6 +18,7 @@ Docs: https://docs.openclaw.ai
 
 ### Fixes
 
+- Control UI: make the chat sidebar split divider focusable, keyboard-resizable, ARIA-described, and pointer-event based so sidebar resizing works without a mouse. Thanks @BunsDev.
 - Agents/auth: keep OAuth auth profiles inherited from the main agent read-through instead of copying refresh tokens into secondary agents, and refresh Codex app-server tokens against the owning store so multi-agent swarms avoid reused refresh-token failures. Fixes #74055. Thanks @ClarityInvest.
 - Channels/Telegram: honor `ALL_PROXY` / `all_proxy` and service-level `OPENCLAW_PROXY_URL` when constructing the HTTP/1-only Telegram Bot API transport, so Windows and service installs that rely on those proxy settings no longer fall back to direct egress. Fixes #74014; refs #74086. Thanks @SymbolStar.
 - ACP/commands: accept forwarded ACP timeout config controls in the OpenClaw bridge, treat unsupported discard-close controls as recoverable cleanup, and restore native `/verbose full` plus no-arg status behavior, so Discord command menus and nested ACP turns no longer fail on supported session controls. Thanks @vincentkoc.
